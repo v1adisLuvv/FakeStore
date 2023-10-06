@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		210D67D22AD055C400A3889E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D67D12AD055C300A3889E /* Product.swift */; };
+		210D67D52AD0563700A3889E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D67D42AD0563700A3889E /* HomeView.swift */; };
+		210D67D72AD0566A00A3889E /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D67D62AD0566A00A3889E /* HomeInteractor.swift */; };
+		210D67D92AD0567500A3889E /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D67D82AD0567500A3889E /* HomePresenter.swift */; };
+		210D67DB2AD0568200A3889E /* HomeDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D67DA2AD0568200A3889E /* HomeDataStore.swift */; };
+		210D67DD2AD0571C00A3889E /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D67DC2AD0571C00A3889E /* HomeModels.swift */; };
+		210D67E12AD05A5400A3889E /* HomeProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D67E02AD05A5400A3889E /* HomeProductCell.swift */; };
+		210D67E42AD0627E00A3889E /* CustomText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D67E32AD0627E00A3889E /* CustomText.swift */; };
 		21EDBA5A2AD04A0900903BA5 /* FakeStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EDBA592AD04A0900903BA5 /* FakeStoreApp.swift */; };
 		21EDBA5C2AD04A0900903BA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EDBA5B2AD04A0900903BA5 /* ContentView.swift */; };
 		21EDBA5E2AD04A0A00903BA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21EDBA5D2AD04A0A00903BA5 /* Assets.xcassets */; };
@@ -14,6 +22,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		210D67D12AD055C300A3889E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		210D67D42AD0563700A3889E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		210D67D62AD0566A00A3889E /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		210D67D82AD0567500A3889E /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		210D67DA2AD0568200A3889E /* HomeDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataStore.swift; sourceTree = "<group>"; };
+		210D67DC2AD0571C00A3889E /* HomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
+		210D67E02AD05A5400A3889E /* HomeProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductCell.swift; sourceTree = "<group>"; };
+		210D67E32AD0627E00A3889E /* CustomText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomText.swift; sourceTree = "<group>"; };
 		21EDBA562AD04A0900903BA5 /* FakeStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FakeStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21EDBA592AD04A0900903BA5 /* FakeStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeStoreApp.swift; sourceTree = "<group>"; };
 		21EDBA5B2AD04A0900903BA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +48,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		210D67D02AD0545900A3889E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				21EDBA592AD04A0900903BA5 /* FakeStoreApp.swift */,
+				21EDBA5B2AD04A0900903BA5 /* ContentView.swift */,
+				21EDBA5D2AD04A0A00903BA5 /* Assets.xcassets */,
+				21EDBA5F2AD04A0A00903BA5 /* Preview Content */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		210D67D32AD0562300A3889E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				210D67D42AD0563700A3889E /* HomeView.swift */,
+				210D67D62AD0566A00A3889E /* HomeInteractor.swift */,
+				210D67D82AD0567500A3889E /* HomePresenter.swift */,
+				210D67DA2AD0568200A3889E /* HomeDataStore.swift */,
+				210D67DC2AD0571C00A3889E /* HomeModels.swift */,
+				210D67E02AD05A5400A3889E /* HomeProductCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		210D67E22AD0626800A3889E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				210D67E32AD0627E00A3889E /* CustomText.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		21EDBA4D2AD04A0900903BA5 = {
 			isa = PBXGroup;
 			children = (
@@ -51,10 +99,10 @@
 		21EDBA582AD04A0900903BA5 /* FakeStore */ = {
 			isa = PBXGroup;
 			children = (
-				21EDBA592AD04A0900903BA5 /* FakeStoreApp.swift */,
-				21EDBA5B2AD04A0900903BA5 /* ContentView.swift */,
-				21EDBA5D2AD04A0A00903BA5 /* Assets.xcassets */,
-				21EDBA5F2AD04A0A00903BA5 /* Preview Content */,
+				210D67E22AD0626800A3889E /* Common */,
+				210D67D02AD0545900A3889E /* App */,
+				210D67D32AD0562300A3889E /* Home */,
+				210D67D12AD055C300A3889E /* Product.swift */,
 			);
 			path = FakeStore;
 			sourceTree = "<group>";
@@ -160,8 +208,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				210D67DD2AD0571C00A3889E /* HomeModels.swift in Sources */,
 				21EDBA5C2AD04A0900903BA5 /* ContentView.swift in Sources */,
+				210D67E12AD05A5400A3889E /* HomeProductCell.swift in Sources */,
+				210D67D52AD0563700A3889E /* HomeView.swift in Sources */,
+				210D67DB2AD0568200A3889E /* HomeDataStore.swift in Sources */,
 				21EDBA5A2AD04A0900903BA5 /* FakeStoreApp.swift in Sources */,
+				210D67D92AD0567500A3889E /* HomePresenter.swift in Sources */,
+				210D67D72AD0566A00A3889E /* HomeInteractor.swift in Sources */,
+				210D67D22AD055C400A3889E /* Product.swift in Sources */,
+				210D67E42AD0627E00A3889E /* CustomText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +350,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"FakeStore/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"FakeStore/App/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -323,7 +379,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"FakeStore/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"FakeStore/App/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
