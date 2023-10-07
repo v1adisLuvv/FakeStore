@@ -12,10 +12,8 @@ enum LoginEndpoint {
 }
 
 extension LoginEndpoint: EndpointType {
-    var baseURL: URL {
-        let urlString = "https://fakestoreapi.com/auth/login"
-        guard let url = URL(string: urlString) else { fatalError("wrong base URL") }
-        return url
+    var baseURL: String {
+        return "https://fakestoreapi.com/auth/login"
     }
     
     var path: String {

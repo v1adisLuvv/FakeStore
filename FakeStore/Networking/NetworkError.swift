@@ -10,6 +10,7 @@ import Foundation
 enum NetworkError: Error {
     case badResponse
     case unableToDecode
-    case badImageURL
+    case badURL
     case networkError
+    case badImage
 }

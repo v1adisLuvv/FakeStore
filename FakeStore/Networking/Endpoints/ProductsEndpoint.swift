@@ -15,10 +15,8 @@ enum ProductsEndpoint {
 }
 
 extension ProductsEndpoint: EndpointType {
-    var baseURL: URL {
-        let urlString = "https://fakestoreapi.com/products"
-        guard let url = URL(string: urlString) else { fatalError("wrong base URL") }
-        return url
+    var baseURL: String {
+        return "https://fakestoreapi.com/products"
     }
     
     var path: String {

@@ -7,8 +7,9 @@
 
 import Foundation
 
+/// Protocol describing an endpoint that contains baseURL, path, method and timeout
 protocol EndpointType {
-    var baseURL: URL { get }
+    var baseURL: String { get }
     var path: String { get }
     var httpMethod: HTTPMethod { get }
     var timeoutInterval: TimeInterval { get }
