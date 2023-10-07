@@ -38,11 +38,11 @@ extension ProductsEndpoint: EndpointType {
         switch self {
         case .all:
             return .get
-        case .detail(id: _):
+        case .detail:
             return .get
         case .allCategories:
             return .get
-        case .category(name: _):
+        case .category:
             return .get
         }
     }

@@ -30,7 +30,7 @@ extension CartsEndpoint: EndpointType {
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getCart(userID: _):
+        case .getCart:
             return .get
         case .addCart:
             return .post
