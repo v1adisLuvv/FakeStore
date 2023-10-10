@@ -7,23 +7,55 @@
 
 import SwiftUI
 
-struct HomeView: View {
+protocol HomeDisplayLogic {
+    func displayProducts(viewModel: HomeModels.Products.ViewModel)
+    func displayImage(viewModel: HomeModels.Images.ViewModel)
+}
 
-    private var gridItemLayout = Array(repeating: GridItem(.flexible()),
+struct HomeView: View {
+    
+    var interactor: HomeBusinessLogic?
+
+    private let gridItemLayout = Array(repeating: GridItem(.flexible()),
                                        count: Constants.numberOfColumns)
-    let products = Product.sampleProducts()
+    
+    @State private var dataStore = HomeDataStore()
 
     var body: some View {
         ScrollView {
             LazyVGrid(columns: gridItemLayout, spacing: Constants.gridVerticalSpacing) {
-                ForEach(products) { product in
-                    HomeProductCell(product: product)
+                ForEach(dataStore.products) { product in
+                    let image = dataStore.downloadedImages[product.image] ?? nil
+                    HomeProductCell(product: product,
+                                    image: image)
                         .frame(width: Constants.cellWidth,
                                height: Constants.cellHeight,
                                alignment: .center)
                 }
             }
             .padding(.horizontal, Constants.gridHorizontalSpacing)
+            .onAppear {
+                fetchProducts()
+            }
+        }
+    }
+    
+    private func fetchProducts() {
+        let request = HomeModels.Products.Request()
+        interactor?.loadProducts(request: request)
+    }
+}
+
+extension HomeView: HomeDisplayLogic {
+    func displayProducts(viewModel: HomeModels.Products.ViewModel) {
+        DispatchQueue.main.async {
+            dataStore.products = viewModel.products
+        }
+    }
+    
+    func displayImage(viewModel: HomeModels.Images.ViewModel) {
+        DispatchQueue.main.async {
+            dataStore.downloadedImages[viewModel.url] = viewModel.image
         }
     }
 }

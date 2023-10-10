@@ -15,21 +15,34 @@ enum ProductsEndpoint {
 }
 
 extension ProductsEndpoint: EndpointType {
-    var baseURL: String {
-        return "https://fakestoreapi.com/products"
+    var url: URL? {
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = host
+        components.path = path
+        components.queryItems = queryItems
+        return components.url
+    }
+    
+    var host: String {
+        return "fakestoreapi.com"
     }
     
     var path: String {
         switch self {
         case .all:
-            return ""
+            return "/products"
         case .detail(id: let id):
-            return "/\(id)"
+            return "/products/\(id)"
         case .allCategories:
-            return "/categories"
+            return "/products/categories"
         case .category(name: let name):
-            return "/categories/\(name)"
+            return "/products/categories/\(name)"
         }
+    }
+    
+    var queryItems: [URLQueryItem] {
+        return []
     }
     
     var httpMethod: HTTPMethod {

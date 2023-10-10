@@ -12,15 +12,29 @@ enum LoginEndpoint {
 }
 
 extension LoginEndpoint: EndpointType {
-    var baseURL: String {
-        return "https://fakestoreapi.com/auth/login"
+    
+    var url: URL? {
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = host
+        components.path = path
+        components.queryItems = queryItems
+        return components.url
+    }
+    
+    var host: String {
+        return "fakestoreapi.com"
     }
     
     var path: String {
         switch self {
         case .login:
-            return ""
+            return "/auth/login"
         }
+    }
+    
+    var queryItems: [URLQueryItem] {
+        return []
     }
     
     var httpMethod: HTTPMethod {

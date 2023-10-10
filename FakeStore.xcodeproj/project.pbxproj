@@ -24,10 +24,10 @@
 		210D67F62AD08B0100A3889E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D67F52AD08B0100A3889E /* NetworkError.swift */; };
 		210D67FE2AD1985200A3889E /* HomeNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D67FD2AD1985200A3889E /* HomeNetworkWorker.swift */; };
 		210D68022AD19B0700A3889E /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D68012AD19B0700A3889E /* RequestBuilder.swift */; };
-		210D68042AD1A05E00A3889E /* ImageEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D68032AD1A05E00A3889E /* ImageEndpoint.swift */; };
 		210D68062AD1CA9800A3889E /* NetworkDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D68052AD1CA9800A3889E /* NetworkDecoder.swift */; };
 		210D680B2AD1CBE900A3889E /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D680A2AD1CBE900A3889E /* ImageDownloader.swift */; };
 		210D680D2AD1CD1C00A3889E /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D680C2AD1CD1C00A3889E /* ImageCache.swift */; };
+		210D680F2AD2C91400A3889E /* HomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D680E2AD2C91400A3889E /* HomeConfigurator.swift */; };
 		21EDBA5A2AD04A0900903BA5 /* FakeStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EDBA592AD04A0900903BA5 /* FakeStoreApp.swift */; };
 		21EDBA5C2AD04A0900903BA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EDBA5B2AD04A0900903BA5 /* ContentView.swift */; };
 		21EDBA5E2AD04A0A00903BA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21EDBA5D2AD04A0A00903BA5 /* Assets.xcassets */; };
@@ -52,10 +52,10 @@
 		210D67F52AD08B0100A3889E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		210D67FD2AD1985200A3889E /* HomeNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNetworkWorker.swift; sourceTree = "<group>"; };
 		210D68012AD19B0700A3889E /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
-		210D68032AD1A05E00A3889E /* ImageEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEndpoint.swift; sourceTree = "<group>"; };
 		210D68052AD1CA9800A3889E /* NetworkDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDecoder.swift; sourceTree = "<group>"; };
 		210D680A2AD1CBE900A3889E /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		210D680C2AD1CD1C00A3889E /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		210D680E2AD2C91400A3889E /* HomeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConfigurator.swift; sourceTree = "<group>"; };
 		21EDBA562AD04A0900903BA5 /* FakeStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FakeStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21EDBA592AD04A0900903BA5 /* FakeStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeStoreApp.swift; sourceTree = "<group>"; };
 		21EDBA5B2AD04A0900903BA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,6 +95,7 @@
 				210D67DC2AD0571C00A3889E /* HomeModels.swift */,
 				210D67E02AD05A5400A3889E /* HomeProductCell.swift */,
 				210D67FD2AD1985200A3889E /* HomeNetworkWorker.swift */,
+				210D680E2AD2C91400A3889E /* HomeConfigurator.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -129,7 +130,6 @@
 				210D67ED2AD0815100A3889E /* ProductsEndpoint.swift */,
 				210D67EF2AD0817700A3889E /* CartsEndpoint.swift */,
 				210D67F32AD0819D00A3889E /* LoginEndpoint.swift */,
-				210D68032AD1A05E00A3889E /* ImageEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -275,7 +275,6 @@
 				210D67E62AD07E0800A3889E /* NetworkManager.swift in Sources */,
 				210D67DB2AD0568200A3889E /* HomeDataStore.swift in Sources */,
 				21EDBA5A2AD04A0900903BA5 /* FakeStoreApp.swift in Sources */,
-				210D68042AD1A05E00A3889E /* ImageEndpoint.swift in Sources */,
 				210D67D92AD0567500A3889E /* HomePresenter.swift in Sources */,
 				210D67E92AD07E7700A3889E /* EndpointType.swift in Sources */,
 				210D680D2AD1CD1C00A3889E /* ImageCache.swift in Sources */,
@@ -284,6 +283,7 @@
 				210D68022AD19B0700A3889E /* RequestBuilder.swift in Sources */,
 				210D67EB2AD07F0900A3889E /* HTTPMethod.swift in Sources */,
 				210D67D22AD055C400A3889E /* Product.swift in Sources */,
+				210D680F2AD2C91400A3889E /* HomeConfigurator.swift in Sources */,
 				210D67FE2AD1985200A3889E /* HomeNetworkWorker.swift in Sources */,
 				210D67E42AD0627E00A3889E /* CustomText.swift in Sources */,
 			);
@@ -435,6 +435,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vlad.FakeStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = minimal;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -464,6 +465,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vlad.FakeStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = minimal;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

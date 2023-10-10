@@ -13,17 +13,31 @@ enum CartsEndpoint {
 }
 
 extension CartsEndpoint: EndpointType {
-    var baseURL: String {
-        return "https://fakestoreapi.com/carts"
+    
+    var url: URL? {
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = host
+        components.path = path
+        components.queryItems = queryItems
+        return components.url
+    }
+    
+    var host: String {
+        return "fakestoreapi.com"
     }
     
     var path: String {
         switch self {
         case .getCart(userID: let userID):
-            return "/user/\(userID)"
+            return "/carts/user/\(userID)"
         case .addCart:
-            return ""
+            return "/carts"
         }
+    }
+    
+    var queryItems: [URLQueryItem] {
+        return []
     }
     
     var httpMethod: HTTPMethod {

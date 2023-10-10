@@ -10,13 +10,23 @@ import SwiftUI
 struct HomeProductCell: View {
     
     let product: Product
+    let image: Image?
 
     var body: some View {
         VStack {
-            Image(systemName: "xbox.logo")
-                .resizable()
-                .background(Colors.imageBgColor)
-                .clipShape(.rect(cornerRadius: Constants.imageCornerRadius))
+            if let image = image {
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 170, height: 170, alignment: .center)
+                    .background(Colors.imageBgColor)
+                    .clipShape(.rect(cornerRadius: Constants.imageCornerRadius))
+            } else {
+                Rectangle()
+                    .foregroundStyle(.green)
+                    .frame(width: 170, height: 170, alignment: .center)
+                    .clipShape(.rect(cornerRadius: Constants.imageCornerRadius))
+            }
             
             HStack {
                 CustomText(title: String(product.price) + "$",
@@ -63,5 +73,5 @@ private enum Colors {
 }
 
 #Preview {
-    HomeProductCell(product: Product.sampleProduct())
+    HomeProductCell(product: Product.sampleProduct(), image: Image(systemName: "xbox.logo"))
 }

@@ -10,7 +10,7 @@ import SwiftUI
 /// Object responsible for working with images downloaded from the network
 protocol ImageDownloader {
     /// Downloads image from the given URL.
-    /// Return the image if the it was previously downloaded, otherwise saves it to cache
+    /// The image is loading from the cache if it was previously downloaded.
     /// - Parameter url: URL source of an image
     /// - Returns: The Image object received from the URL
     func loadImage(from url: String) async throws -> Image
@@ -31,7 +31,7 @@ final class DefaultImageDownloader: ImageDownloader {
         if let uiImage = imageCache.load(forKey: url) {
             return Image(uiImage: uiImage)
         }
-        let data = try await networkManager.send(ImageEndpoint.image(url: url))
+        let data = try await networkManager.send(url)
         guard let uiImage = UIImage(data: data) else {
             throw NetworkError.badImage
         }
