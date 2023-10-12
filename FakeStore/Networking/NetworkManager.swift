@@ -47,10 +47,12 @@ final class DefaultNetworkManager: NetworkManager {
         do {
             (data, response) = try await URLSession.shared.data(for: request)
         } catch {
+            print(error)
             throw NetworkError.networkError
         }
         guard let response = response as? HTTPURLResponse,
               (200..<300).contains(response.statusCode) else {
+            print(response)
             throw NetworkError.badResponse
         }
         return data

@@ -15,25 +15,19 @@ protocol HomeDisplayLogic {
 struct HomeView: View {
     
     var interactor: HomeBusinessLogic?
-
-    private let gridItemLayout = Array(repeating: GridItem(.flexible()),
-                                       count: Constants.numberOfColumns)
     
     @State private var dataStore = HomeDataStore()
+//    @State private var products = Product.sampleProducts()
 
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: gridItemLayout, spacing: Constants.gridVerticalSpacing) {
+            LazyVGrid(columns: Constants.gridItemLayout,
+                      spacing: Constants.gridSpacing) {
                 ForEach(dataStore.products) { product in
-                    let image = dataStore.downloadedImages[product.image] ?? nil
-                    HomeProductCell(product: product,
-                                    image: image)
-                        .frame(width: Constants.cellWidth,
-                               height: Constants.cellHeight,
-                               alignment: .center)
+                    let image = dataStore.downloadedImages[product.image]
+                    HomeProductCell(product: product, image: image)
                 }
             }
-            .padding(.horizontal, Constants.gridHorizontalSpacing)
             .onAppear {
                 fetchProducts()
             }
@@ -62,10 +56,11 @@ extension HomeView: HomeDisplayLogic {
 
 private enum Constants {
     static let numberOfColumns: Int = 2
-    static let gridVerticalSpacing: CGFloat = 10
-    static let gridHorizontalSpacing: CGFloat = 20
-    static let cellWidth: CGFloat = 170
-    static let cellHeight: CGFloat = 290
+    static let gridSpacing: CGFloat = 0
+    static let flexibleGridItem = GridItem(.flexible(),
+                                           spacing: gridSpacing)
+    static let gridItemLayout = Array(repeating: flexibleGridItem,
+                                      count: numberOfColumns)
 }
 
 #Preview {

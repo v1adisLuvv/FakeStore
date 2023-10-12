@@ -10,5 +10,5 @@ import SwiftUI
 @Observable
 final class HomeDataStore {
     var products: [Product] = []
-    var downloadedImages: [String: Image?] = [:]
+    var downloadedImages: [String: Image] = [:]
 }

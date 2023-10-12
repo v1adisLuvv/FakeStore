@@ -59,6 +59,6 @@ extension ProductsEndpoint: EndpointType {
     }
     
     var timeoutInterval: TimeInterval {
-        return 10
+        return 60
     }
 }

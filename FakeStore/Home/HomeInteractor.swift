@@ -21,10 +21,14 @@ final class HomeInteractor {
 extension HomeInteractor: HomeBusinessLogic {
     func loadProducts(request: HomeModels.Products.Request) {
         Task {
-            let products = try await networkWorker?.getAllProducts() ?? []
-            loadImages(for: products)
-            let response = HomeModels.Products.Response(products: products)
-            presenter?.presentProducts(response: response)
+            do {
+                let products = try await networkWorker?.getAllProducts() ?? []
+                loadImages(for: products)
+                let response = HomeModels.Products.Response(products: products)
+                presenter?.presentProducts(response: response)
+            } catch {
+                print(error)
+            }
         }
     }
     
